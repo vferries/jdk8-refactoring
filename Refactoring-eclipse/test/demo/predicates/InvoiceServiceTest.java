@@ -1,3 +1,5 @@
+package demo.predicates;
+
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
 
@@ -68,8 +70,8 @@ public class InvoiceServiceTest {
 
 	private class JenkinsPredicate implements Predicate<Invoice> {
 		@Override
-		public boolean test(Invoice t) {
-			return t.getClass().equals("Jenkins");
+		public boolean test(Invoice invoice) {
+			return invoice.getClass().equals("Jenkins");
 		}
 	}
 
@@ -81,8 +83,8 @@ public class InvoiceServiceTest {
 		}
 
 		@Override
-		public boolean test(Invoice t) {
-			return t.getAmount() > amount;
+		public boolean test(Invoice invoice) {
+			return invoice.getAmount() > amount;
 		}
 	}
 
