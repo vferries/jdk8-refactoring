@@ -71,7 +71,7 @@ public class InvoiceServiceTest {
 	private class JenkinsPredicate implements Predicate<Invoice> {
 		@Override
 		public boolean test(Invoice invoice) {
-			return invoice.getClass().equals("Jenkins");
+			return invoice.getClient().equals("Jenkins");
 		}
 	}
 
